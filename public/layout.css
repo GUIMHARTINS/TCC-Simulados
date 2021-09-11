@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: system-ui;
+    font-size: 100%;
+    color: rgb(43, 41, 41);
+    margin: 0%;
+}
+#cabecalho{
+    background-color: #405794;
+    display: flex;
+    padding: 28px;
+    justify-content: space-between;
+}
+#cabecalho img{
+    height: 40px;
+}
+
