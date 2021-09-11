@@ -12,7 +12,7 @@
 <body>
     <header id="cabecalho">
         <img src="/LOGO.png" alt="">
-        <input type="text" placeholder="Pesquisar Simulados...">
+        <input id="campopesquisa" type="text" placeholder="Pesquisar Simulados...">
     </header>
     <section id="conteudo">
 
