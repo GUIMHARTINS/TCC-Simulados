@@ -36,4 +36,15 @@ body {
     color:white;
     padding: 10px;
     text-align: center;
+
+}
+.boxsimulado{
+    border: 1px solid rgb(54, 54, 54);
+    margin:20px;
+    padding:20px;
+    display: inline-block;
+border-radius: 10px;
+}
+.boxsimulado .nome{
+    font-size: 200%;
 }
