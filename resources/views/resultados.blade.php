@@ -1,1 +1,4 @@
-pagina resultados
+@extends('layout')
+
+@section('conteudo')
+@endsection
