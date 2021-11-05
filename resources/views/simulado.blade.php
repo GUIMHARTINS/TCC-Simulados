@@ -31,5 +31,10 @@
 
     </label>
     @endfor
+    <hr>
+    <div class="rowButtons">
+        <a class="btn"  href="/">Cancelar</a>
+        <button class="btn"   >Finalizar</button>
+    </div>
 </div>
 @endsection
