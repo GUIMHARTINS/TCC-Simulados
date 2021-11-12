@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('conteudo')
-<link rel="stylesheet" href="simulado.css">
+<link rel="stylesheet" href="/css/simulado.css">
 <div id="paginasimulado">
     <h1>Titulo do Simulado</h1>
 

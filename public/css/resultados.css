@@ -1,0 +1,50 @@
+.boxtop {
+    text-align: center;
+    margin: 40px;
+}
+
+.txtnota {
+    font-size: 200%;
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+hr {
+    margin: 0px 40px;
+}
+
+.box-question {
+    border: 1px solid;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 20px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: 300px;
+}
+
+.box-question h1{
+    margin: 0;
+}
+
+.box-all-answers {
+    display: flex;
+    flex-direction: row;
+}
+
+.box-answer {
+    margin: 2px;
+    margin-top: 12px;
+}
+
+.box-all-questions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
