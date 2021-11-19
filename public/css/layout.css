@@ -38,4 +38,20 @@ body {
     text-align: center;
 
 }
-
+.btn
+{
+    border: none;
+    padding: 8px 16px ;
+    height: 40px ;
+    text-decoration: none;
+    font-size: 100%;
+    border-radius: 4px;
+    margin: 10px ;
+    cursor: pointer;
+    background-color: #405794;
+    color: white;
+}
+.btn:hover
+{
+    filter: brightness(1.5);
+}

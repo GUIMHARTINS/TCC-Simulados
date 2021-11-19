@@ -2,12 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/simulado', function () {
-    return view('simulado');
-});
-Route::get('/resultados', function () {
-    return view('resultados');
-});
+use App\Http\Controllers\Controller;
+
+Route::get('/', [Controller::class, 'home']);
+
+Route::get('/simulado', [Controller::class, 'simulado']);
+
+Route::get('/resultado', [Controller::class, 'resultado']);

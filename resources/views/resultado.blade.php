@@ -45,4 +45,7 @@
         </div>
     @endfor
 </div>
+<div class="box-buttons">
+    <a class="btn" href="">Fazer outro simulado</a>
+</div>
 @endsection

@@ -2,10 +2,10 @@
 
 @section('conteudo')
 <link rel="stylesheet" href="/css/home.css">
-@for($i = 1; $i <=10; $i++)
+@foreach($simulados as $s)
     <div class="boxsimulado">
-        <div class="nome">ENEM 2019</div>
-        <div class="quantidade">20 questoes</div>
+        <div class="nome">{{ $s->nome}}</div>
+        <div class="quantidade">{{ $s->quant_questoes}} questoes</div>
     </div>
-@endfor
+@endforeach
 @endsection

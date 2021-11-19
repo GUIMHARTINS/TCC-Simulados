@@ -48,3 +48,8 @@ hr {
     padding: 20px;
     justify-content: center;
 }
+
+.box-buttons{
+    text-align: center;
+    margin: 20px;
+}
