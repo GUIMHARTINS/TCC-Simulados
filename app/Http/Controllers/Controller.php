@@ -31,7 +31,22 @@ class Controller extends BaseController
 
     public function resultado()
     {
-        return view('resultado');
+        $todasquestoes = Simulado::todasquestoes($_REQUEST["id"]); 
+        $quantidadequestoes = count($todasquestoes);
+        $acertos = 0;
+        foreach($_REQUEST["respostas"] as $idquestao => $idrespostadousuario)
+        {
+            $respostacorreta = Simulado::verificarresposta($idquestao);
+            if($respostacorreta->id == $idrespostadousuario){
+                $acertos ++;
+            }
+        }
+        $notausuario = ($acertos/$quantidadequestoes)*10;
+        return view('resultado', [
+            "quantidadequestoes"=>$quantidadequestoes,
+            "acertos"=>$acertos,
+            "notausuario"=> $notausuario
+        ]);
     }
 
 }

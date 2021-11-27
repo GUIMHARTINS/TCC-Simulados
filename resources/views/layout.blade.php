@@ -11,11 +11,13 @@
 
 <body>
     <header id="cabecalho">
-        <img src="/LOGO.png" alt="">
+        <a href="/">
+            <img src="/LOGO.png" alt="">
+        </a>
         <input id="campopesquisa" type="text" placeholder="Pesquisar Simulados...">
     </header>
     <section id="conteudo">
-    @yield('conteudo')
+        @yield('conteudo')
     </section>
 
     <footer id="rodape">

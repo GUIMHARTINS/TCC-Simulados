@@ -7,10 +7,10 @@
         Simulado finalizado. Confira abaixo o seu desempenho
     </div>
     <div class="txtnota">
-        Nota: 8
+        Nota: {{$notausuario}}
     </div>
     <div>
-        Acertou 4 de 5 questões
+        Acertou {{$acertos}} de {{$quantidadequestoes}} questões
     </div>
 </div>
 

@@ -8,4 +8,4 @@ Route::get('/', [Controller::class, 'home']);
 
 Route::get('/simulado', [Controller::class, 'simulado']);
 
-Route::get('/resultado', [Controller::class, 'resultado']);
+Route::post('/resultado', [Controller::class, 'resultado']);

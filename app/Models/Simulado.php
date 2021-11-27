@@ -36,6 +36,14 @@ class Simulado
         $query->where("questao.id", "=", $id);
         return $query->get() -> toArray();
     }
+
+    public static function verificarresposta($id) 
+    {
+        $query = DB::table("alternativas");
+        $query -> where("alternativas.Status", "=", 1);
+        $query -> where("alternativas.questao_id", "=", $id);
+        return $query -> first();
+    }
 }
 
 
