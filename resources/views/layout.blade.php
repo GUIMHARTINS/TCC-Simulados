@@ -14,7 +14,10 @@
         <a href="/">
             <img src="/LOGO.png" alt="">
         </a>
-        <input id="campopesquisa" type="text" placeholder="Pesquisar Simulados...">
+        <form action="/" method="get">
+            <input name="busca" id="campopesquisa" type="text" placeholder="Pesquisar Simulados...">
+            <button type="submit" class="hidden"></button>
+        </form>
     </header>
     <section id="conteudo">
         @yield('conteudo')

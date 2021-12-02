@@ -53,3 +53,13 @@ hr {
     text-align: center;
     margin: 20px;
 }
+
+.box-question.verde {
+    border-color: green;
+    color: green;
+}
+
+.box-question.vermelho {
+    border-color: red;
+    color: red;
+}

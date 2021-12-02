@@ -5,7 +5,7 @@
 @foreach($simulados as $s)
     <a href="/simulado?id={{$s->id}}" class="boxsimulado">
         <div class="nome">{{ $s->nome}}</div>
-        <div class="quantidade">{{ $s->quant_questoes}} questoes</div>
+        <div class="quantidade">{{ $s->quant_questoes}} questões</div>
     </a>
 @endforeach
 @endsection

@@ -1,3 +1,5 @@
+<?php use App\Models\Simulado; ?>
+
 @extends('layout')
 
 @section('conteudo')
@@ -15,37 +17,47 @@
 </div>
 
 <hr>
-
+<?php 
+    $cont_questoes = 1;
+?>
 <div class="box-all-questions">
-    @for($i = 1; $i <=10; $i++)
-        <div class="box-question">
-            <h1>Questão 1</h1>
+    @foreach($simulado -> questoes as $q)
+    <?php 
+        $cont_alternativas="A"; 
+        $respostacorreta = Simulado::verificarresposta($q -> id);
+        $iddarespostadousuario = $respostas[$q -> id];
+        if ($respostacorreta -> id == $iddarespostadousuario) {
+            $corquestao = "verde";
+        } else {
+            $corquestao = "vermelho";
+        }
+
+    ?>
+        <div class="box-question {{$corquestao}}">
+            <h1>Questão {{$cont_questoes}}</h1>
             <div class="box-all-answers">
+                @foreach($q -> alternativas as $a)
                 <span class="box-answer">
-                    <div>A</div>
-                    <input type="radio" name="" id="">
+                    <div>{{$cont_alternativas}}</div>
+                    <?php
+                    $colorir = ""; 
+                    if($a -> id == $respostas[$q -> id]){
+                        $colorir = "checked";
+                    }
+                    ?>
+                    <input {{$colorir}} type="radio" name="" id="">
+
                 </span>
-                <span class="box-answer">
-                    <div>B</div>
-                    <input type="radio" name="" id="">
-                </span>
-                <span class="box-answer">
-                    <div>C</div>
-                    <input type="radio" name="" id="">
-                </span>
-                <span class="box-answer">
-                    <div>D</div>
-                    <input type="radio" name="" id="">
-                </span>
-                <span class="box-answer">
-                    <div>E</div>
-                    <input type="radio" name="" id="">
-                </span>
+                <?php $cont_alternativas++; ?>
+                @endforeach
             </div>
         </div>
-    @endfor
+        <?php 
+        $cont_questoes++;
+        ?>
+    @endforeach
 </div>
 <div class="box-buttons">
-    <a class="btn" href="">Fazer outro simulado</a>
+    <a class="btn" href="/">Fazer outro simulado</a>
 </div>
 @endsection

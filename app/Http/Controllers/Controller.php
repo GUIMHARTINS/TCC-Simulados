@@ -9,21 +9,21 @@ class Controller extends BaseController
 {
     public function home()
     {
-        $simulados = Simulado::todos();
-        // dd($simulados);
+        if(@$_REQUEST["busca"]){
+            $simulados = Simulado::busca($_REQUEST["busca"]);
+        } else {
+            $simulados = Simulado::todos();
+        }
+
         return view('home', [
+            
             "simulados"=>$simulados
         ]);
     }
 
     public function simulado()
     {
-        $simulado = Simulado::um($_REQUEST["id"]);
-        $simulado -> questoes = Simulado::todasquestoes($_REQUEST["id"]);
-        foreach($simulado -> questoes as $q)
-        {
-            $q -> alternativas = Simulado::todasalternativas($q -> id);
-        }
+        $simulado = Simulado::simuladocompleto($_REQUEST["id"]);
         return view('simulado', [
             "simulado"=>$simulado
         ]);
@@ -31,6 +31,7 @@ class Controller extends BaseController
 
     public function resultado()
     {
+        $simulado = Simulado::simuladocompleto($_REQUEST["id"]);
         $todasquestoes = Simulado::todasquestoes($_REQUEST["id"]); 
         $quantidadequestoes = count($todasquestoes);
         $acertos = 0;
@@ -45,7 +46,9 @@ class Controller extends BaseController
         return view('resultado', [
             "quantidadequestoes"=>$quantidadequestoes,
             "acertos"=>$acertos,
-            "notausuario"=> $notausuario
+            "notausuario"=> $notausuario,
+            "simulado"=> $simulado,
+            "respostas"=> $_REQUEST["respostas"]
         ]);
     }
 
